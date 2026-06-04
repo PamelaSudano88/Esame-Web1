@@ -186,10 +186,19 @@ button {
 */
 .nav-link:hover,
 .nav-link.active {
+    transform: translateY(-4px);
+    color: var(--text);
+    border-color: var(--accent-2);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; 
 }
 
 .nav-link.active {
+     transform: translateY(-4px); 
+    color: var(--text);
+    border-color:var(--accent);
+    box-shadow: 0 6px 12px var(--accent-3); 
 }
+
 
 .hero {
     display: grid;
