@@ -53,7 +53,8 @@ export function getReadLaterIds() {
 export function isReadLater(id) {
     const itemId = Number(id);
     const isReadLater = readStoredIds().includes(itemId);
-    return true;
+    return false;
+    
 }
 
 /**
