@@ -56,7 +56,21 @@ async function requestJson(url, errorPrefix) {
     // Poi in caso di errore rella risposta, mandare un messaggio di errore che contenga il prefisso errorPrefix e l'eventuale messaggio di errore restituito dalla fetch
     // Infine restituisci i dati parsati come oggetto, senza manipolarli o trasformarli
     // Controlla sempre anche errori di rete o altri errori imprevisti con un catch e restituisci un messaggio di errore coerente con il prefisso
+
+    try {
+        const response = await fetch(url);
+        
+        if (!response.ok) {
+            throw new Error(`Errore HTTP! Stato: ${response.status}`);
+        }
+        
+        return await response.json();
+        
+    } catch (error) {
+        throw new Error(`${errorPrefix}: ${error.message}`);
+    }
 }
+
 
 /**
  * Recupera gli ID delle top stories.
