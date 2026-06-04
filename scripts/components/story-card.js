@@ -91,7 +91,7 @@ export function createStoryCard({
 
         <p class="story-card__excerpt">${excerpt}</p>
         <div class="story-card__footer">
-             <a href="${sourceLink}">${sanitizeHTML(story.id)}
+             <span>${sourceLink}</span>
             <span class="story-card__footnote">ID ${sanitizeHTML(story.id)}</span>
         </div>
     `;
